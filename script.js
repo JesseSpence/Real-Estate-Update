@@ -1,7 +1,7 @@
 let houses = JSON.parse(localStorage.getItem("houses"))
 ? JSON.parse(localStorage.getItem("houses")):[
     {id:1,
-        image: 'https://picsum.photos/200/300/?blur',
+        image: 'https://picsum.photos/id/1008/200/300',
      title:'Light and Modern Apartment',
      price: '4500',
      address:'2436 SW 8th St, Los Angeles, FL 33135, USA',
@@ -16,7 +16,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
     },
 
     {id:2,
-        image:'https://picsum.photos/200/300/?blur',
+        image:'https://picsum.photos/id/164/200/300',
     title:'Cute Apartment',
     price: '4500',
     address:'2436 SW 8th St, Los Angeles, FL 33135, USA',
@@ -30,7 +30,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
     yearBuilt:'2016',
    },
    {id:3,
-    image: 'https://picsum.photos/200/300/?blur',
+    image: 'https://picsum.photos/id/1062/200/300',
    title:'Cozy Apartment',
    price: '4500',
    address:'2436 SW 8th St, Miami, FL 33135, USA',
@@ -44,7 +44,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
    yearBuilt:'2016',
   },
   {id:4,
-    image: 'https://picsum.photos/200/300/?blur',
+    image: 'https://picsum.photos/id/238/200/300',
   title:'Newly Built Apartment',
   price: '4500',
   address:'2436 SW 8th St, Chicago, FL 33135, USA',
@@ -58,7 +58,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
   yearBuilt:'2016',
  },
  {id:5,
-    image: 'https://picsum.photos/200/300/?blur',
+    image: 'https://picsum.photos/id/221/200/300',
  title:'Fully Furnished Apartment',
  price: '6000',
  address:'2436 SW 8th St, Los Angeles, FL 33135, USA',
@@ -72,7 +72,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
  yearBuilt:'2016',
 },
 {id:6,
-    image: 'https://picsum.photos/200/300/?blur',
+    image: 'https://picsum.photos/id/556/200/300',
      title:'North Facing House',
      price: '6000',
      address:'2436 SW 8th St, Miami, FL 33135, USA',
@@ -86,7 +86,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
      yearBuilt:'2016',
     },
     {id:7,
-        image: 'https://picsum.photos/200/300/?blur',
+        image: 'https://picsum.photos/id/594/200/300',
     title:'Newly Built House',
     price: '4500',
     address:'2436 SW 8th St, New York, FL 33135, USA',
@@ -100,7 +100,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
     yearBuilt:'2016',
    },
    {id:8,
-    image: 'https://picsum.photos/200/300/?blur',
+    image: 'https://picsum.photos/id/142/200/300',
    title:'Grand Mansion',
    price: '10000',
    address:'2436 SW 8th St, Miami, FL 33135, USA',
@@ -114,7 +114,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
    yearBuilt:'2016',
   },
   {id:9,
-    image: 'https://picsum.photos/200/300/?blur',
+    image: 'https://picsum.photos/id/604/200/300',
   title:'Bachelor Pad',
   price: '4500',
   address:'2436 SW 8th St, Chicago, FL 33135, USA',
@@ -128,7 +128,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
   yearBuilt:'2016',
  },
  {id:10,
-    image: 'https://picsum.photos/200/300/?blur',
+    image: 'https://picsum.photos/id/1031/200/300',
  title:'Penthouse Open Floor',
  price: '10000',
  address:"'2436 SW 8th St',' New York','FL 33135 USA'",
@@ -145,10 +145,11 @@ let houses = JSON.parse(localStorage.getItem("houses"))
    const propertiesContainer = document.querySelector("#properties");
 
 // add array to local storage   
-//    localStorage.setItem("houses", JSON.stringify(houses));
+   localStorage.setItem("houses", JSON.stringify(houses));
    
 // display local storage    
-// document.getElementById("properties").innerHTML = JSON.parse( localStorage.getItem("houses"));
+document.getElementById("properties").innerHTML = JSON.parse( localStorage.getItem("houses"));
+
 function showHouses (houses) {
     propertiesContainer.innerHTML = "";
     houses.forEach(house => {
@@ -175,15 +176,6 @@ function showHouses (houses) {
 
 showHouses(houses);
 
-// console.log( document.getElementById("comboA").ariaValueMax);
-
-//  function handleChange(houses){
-//     let value = document.getElementById("comboA").ariaValueMax;
-//     houses = houses.filter(function(house) { 
-//         let filteredHouses = houses.filter(function(house) {
-//             return house.type === value;
-//           });
-//       });}
 function typeHouse() {
     let value = document.getElementById("comboA").value;
     //display entire array when all is selected
@@ -237,37 +229,6 @@ function typeHouse() {
     });   
     showHouses(filteredHouses);
   }
-
-
-//     document.getElementById("comboA").onchange = function(){
-//     let value = document.getElementById("comboA").value;  
-//     houses = houses.filter(function(house) {
-//     return house.type === value;
-
-    
-//   });}
-  
-  
-// houses.forEach((house) => {
-    
-//     li.innerHTML = `<input type="checkbox" onc"div");
-//     const li = document.createElement("li");lick="taskComplete(this)" class="check" ${
-//         task.completed ? "checked" : ""
-//     }>
-//       <input type="text" value="${task.task}" class="task ${
-//         task.completed ? "completed" : ""
-//     }" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-//       <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
-//     list.insertBefore(li, list.children[0]);
-// });
-// place= JSON.stringify(houses, null, 2);
-
-// function createProperties (){
-// for (let i = 0; houses[i]; i++);
-// document.getElementById("properties").innerHTML = houses;}
-
-// createProperties();
-
 
 function sortHouses(){
     let price = houses.sort((a, b) => {

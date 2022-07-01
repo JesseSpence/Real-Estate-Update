@@ -20,8 +20,7 @@
     text-shadow: 1px 1px 2px black;
 }
 .hometext{
-    padding-top:50px ;
-    width: 100vw;
+    height: fit-content;
     border:3px solid rgba(0, 0, 0, 0.24);
     box-shadow: 20px 20px 40px 0px rgba(0, 0, 0, 0.632);
     background-color:rgba(43, 41, 41, 0.544);

@@ -1,11 +1,11 @@
 let houses = JSON.parse(localStorage.getItem("houses"))
 ? JSON.parse(localStorage.getItem("houses")):[
     {id:1,
-        image:'https://picsum.photos/200/300/?blur',
+        image: 'https://picsum.photos/200/300/?blur',
      title:'Light and Modern Apartment',
-     price: '$4500/mo',
-     address:'2436 SW 8th St, Miami, FL 33135, USA',
-     bedrooms:'4',
+     price: '4500',
+     address:'2436 SW 8th St, Los Angeles, FL 33135, USA',
+     bedrooms:'3',
      bathrooms:'2',
      garage:'1',
      size:'1200',
@@ -18,9 +18,9 @@ let houses = JSON.parse(localStorage.getItem("houses"))
     {id:2,
         image:'https://picsum.photos/200/300/?blur',
     title:'Cute Apartment',
-    price: '$4500/mo',
-    address:'2436 SW 8th St, Miami, FL 33135, USA',
-    bedrooms:'4',
+    price: '4500',
+    address:'2436 SW 8th St, Los Angeles, FL 33135, USA',
+    bedrooms:'3',
     bathrooms:'2',
     garage:'1',
     size:'1200',
@@ -32,9 +32,9 @@ let houses = JSON.parse(localStorage.getItem("houses"))
    {id:3,
     image: 'https://picsum.photos/200/300/?blur',
    title:'Cozy Apartment',
-   price: '$4500/mo',
+   price: '4500',
    address:'2436 SW 8th St, Miami, FL 33135, USA',
-   bedrooms:'4',
+   bedrooms:'2',
    bathrooms:'2',
    garage:'1',
    size:'1200',
@@ -46,9 +46,9 @@ let houses = JSON.parse(localStorage.getItem("houses"))
   {id:4,
     image: 'https://picsum.photos/200/300/?blur',
   title:'Newly Built Apartment',
-  price: '$4500/mo',
-  address:'2436 SW 8th St, Miami, FL 33135, USA',
-  bedrooms:'4',
+  price: '4500',
+  address:'2436 SW 8th St, Chicago, FL 33135, USA',
+  bedrooms:'3',
   bathrooms:'2',
   garage:'1',
   size:'1200',
@@ -60,10 +60,10 @@ let houses = JSON.parse(localStorage.getItem("houses"))
  {id:5,
     image: 'https://picsum.photos/200/300/?blur',
  title:'Fully Furnished Apartment',
- price: '$4500/mo',
- address:'2436 SW 8th St, Miami, FL 33135, USA',
- bedrooms:'4',
- bathrooms:'2',
+ price: '6000',
+ address:'2436 SW 8th St, Los Angeles, FL 33135, USA',
+ bedrooms:'2',
+ bathrooms:'4',
  garage:'1',
  size:'1200',
  type:'Apartment',
@@ -74,13 +74,13 @@ let houses = JSON.parse(localStorage.getItem("houses"))
 {id:6,
     image: 'https://picsum.photos/200/300/?blur',
      title:'North Facing House',
-     price: '$4500/mo',
+     price: '6000',
      address:'2436 SW 8th St, Miami, FL 33135, USA',
-     bedrooms:'4',
+     bedrooms:'5',
      bathrooms:'2',
      garage:'1',
      size:'1200',
-     type:'Apartment',
+     type:'House',
      user:' Samuel Palmer',
      datePosted:'04/04/2020',
      yearBuilt:'2016',
@@ -88,13 +88,13 @@ let houses = JSON.parse(localStorage.getItem("houses"))
     {id:7,
         image: 'https://picsum.photos/200/300/?blur',
     title:'Newly Built House',
-    price: '$4500/mo',
-    address:'2436 SW 8th St, Miami, FL 33135, USA',
+    price: '4500',
+    address:'2436 SW 8th St, New York, FL 33135, USA',
     bedrooms:'4',
     bathrooms:'2',
     garage:'1',
     size:'1200',
-    type:'Apartment',
+    type:'House',
     user:' Samuel Palmer',
     datePosted:'04/04/2020',
     yearBuilt:'2016',
@@ -102,13 +102,13 @@ let houses = JSON.parse(localStorage.getItem("houses"))
    {id:8,
     image: 'https://picsum.photos/200/300/?blur',
    title:'Grand Mansion',
-   price: '$4500/mo',
+   price: '10000',
    address:'2436 SW 8th St, Miami, FL 33135, USA',
-   bedrooms:'4',
+   bedrooms:'5',
    bathrooms:'2',
    garage:'1',
    size:'1200',
-   type:'Apartment',
+   type:'House',
    user:' Samuel Palmer',
    datePosted:'04/04/2020',
    yearBuilt:'2016',
@@ -116,13 +116,13 @@ let houses = JSON.parse(localStorage.getItem("houses"))
   {id:9,
     image: 'https://picsum.photos/200/300/?blur',
   title:'Bachelor Pad',
-  price: '$4500/mo',
-  address:'2436 SW 8th St, Miami, FL 33135, USA',
-  bedrooms:'4',
+  price: '4500',
+  address:'2436 SW 8th St, Chicago, FL 33135, USA',
+  bedrooms:'1',
   bathrooms:'2',
   garage:'1',
   size:'1200',
-  type:'Apartment',
+  type:'Studio',
   user:' Samuel Palmer',
   datePosted:'04/04/2020',
   yearBuilt:'2016',
@@ -130,20 +130,21 @@ let houses = JSON.parse(localStorage.getItem("houses"))
  {id:10,
     image: 'https://picsum.photos/200/300/?blur',
  title:'Penthouse Open Floor',
- price: '$4500/mo',
- address:'2436 SW 8th St, Miami, FL 33135, USA',
- bedrooms:'4',
+ price: '10000',
+ address:"'2436 SW 8th St',' New York','FL 33135 USA'",
+ bedrooms:'2',
  bathrooms:'2',
  garage:'1',
  size:'1200',
- type:'Apartment',
+ type:'Studio',
  user:' Samuel Palmer',
  datePosted:'04/04/2020',
  yearBuilt:'2016',
 },]
 
 localStorage.setItem("houses", JSON.stringify(houses));
-
+// display local storage    
+// document.getElementById("propertyList").innerHTML = JSON.parse( localStorage.getItem("houses"));
     const propertiesTable = document.querySelector("#propertylist");
 
 function ShowHouseListings (houses) {
@@ -210,9 +211,63 @@ function addListing() {
   console.log(houses);
 }
 
+function typeHouse() {
+  let value = document.getElementById("comboA").value;
+  //display entire array when all is selected
+  if (value === "All") {
+    return ShowHouseListings(houses);
+  }
+  //create array to show only desired housesS
+  let filteredHouses = houses.filter((house) => {
+    return house.type === value     //loop through houses and return houses which id noes not match
+  });   
+  ShowHouseListings(filteredHouses);
+}
 
+function addressHouse() {
+  let value = document.getElementById("comboB").value;
+  //display entire array when all is selected
+  if (value === "All") {
+    return ShowHouseListings(houses);
+  }
+  let filteredHouses = houses.filter((house) => {
+    // create condition to search for value inside of the addrress
+    if(house.address.includes(value)){ 
+    return house.address } 
+        //loop through houses and return houses which id noes not match
+  });   
+  ShowHouseListings(filteredHouses);}
 
+function bedroomsHouse() {
+  let value = document.getElementById("comboC").value;
+  //display entire array when all is selected
+  if (value === "All") {
+    return ShowHouseListings(houses);
+  }
+  //create array to show only desired housesS
+  let filteredHouses = houses.filter((house) => {
+    return house.bedrooms === value     //loop through houses and return houses which id noes not match
+  });   
+  ShowHouseListings(filteredHouses);}
 
+function priceHouse() {
+  let value = document.getElementById("comboD").value;
+  //display entire array when all is selected
+  if (value === "All") {
+    return ShowHouseListings(houses);
+  }
+  //create array to show only desired houses
+  let filteredHouses = houses.filter((house) => {
+    return house.price === value     //loop through houses and return houses which id noes not match
+  });   
+  ShowHouseListings(filteredHouses);}
 
-// let index = houses.indexOf(house => {houses.id ===id})
-// houses= houses.slice(index,1);
+function sortHouses(){
+  let price = houses.sort((a, b) => {
+    return a.price - b.price;
+  });
+  let retrievedList = price;
+  document.querySelector("#properties").innerHTML = "";
+  retrievedList.forEach((propperty) => {
+    ShowHouseListings(retrievedList);})
+}

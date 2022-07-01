@@ -150,6 +150,69 @@
       </div>
     </div>
   </div>
+  <div id="form1">
+    <form>
+        <div class="filters">
+          <label for="exampleInputEmail1" class="form-label">Type</label>
+          <div>
+              <select name="budgets" id="comboA" onchange="typeHouse()" placeholder="Max Price">
+                  
+                  <option value="All">Looking for..</option>
+                  <option value="Apartment">Apartment</option>
+                  <option value="House">Family House</option>
+                  <option value="Studio">Studio</option>
+                 
+                </select>
+         
+      </div>
+      </div>
+      <div class="filters">
+          <label for="exampleInputEmail1" class="form-label">City</label>
+          <div>
+              <select name="budgets" id="comboB" onchange="addressHouse()" placeholder="Max Price">
+                  
+                  <option value="All">All Cities</option>
+                  <option value="Chicago">Chicago</option>
+                  <option value="Los Angeles">Los Angeles</option>
+                  <option value="Miami">Miami</option>
+                  <option value="New York">New York</option>
+                </select>
+         
+      </div>
+  </div>
+      
+  <div class="filters">
+          <label for="exampleInputEmail1" class="form-label">Bedrooms</label>
+          <div>
+              <select name="budgets" id="comboC" onchange="bedroomsHouse()" placeholder="Max Price">
+                  
+                  <option value="All">Bedrooms</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+         
+      </div>
+  </div>
+     
+  <div class="filters">
+          <label for="budgets" class="form-label">Price</label>
+          <div>
+              <select name="budgets" id="comboD" onchange="priceHouse()" placeholder="Max Price">
+                  
+                  <option value="All">Max Price</option>
+                  <option value="All">Any</option>
+                  <option value="4500">$3000-$5000</option>
+                  <option value="6000">$5000-$8000</option>
+                  <option value="10000">$8000+</option>
+                </select>
+         
+      </div>
+  </div>
+   </form>
+  </div>
     <div id="displayListings">
         <table class="table">
           <thead>
