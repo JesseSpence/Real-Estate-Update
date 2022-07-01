@@ -1,7 +1,7 @@
 let houses = JSON.parse(localStorage.getItem("houses"))
 ? JSON.parse(localStorage.getItem("houses")):[
     {id:1,
-        image: 'https://picsum.photos/200/300/?blur',
+        image: 'https://picsum.photos/id/1008/200/300',
      title:'Light and Modern Apartment',
      price: '4500',
      address:'2436 SW 8th St, Los Angeles, FL 33135, USA',
@@ -16,7 +16,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
     },
 
     {id:2,
-        image:'https://picsum.photos/200/300/?blur',
+        image:'https://picsum.photos/id/164/200/300',
     title:'Cute Apartment',
     price: '4500',
     address:'2436 SW 8th St, Los Angeles, FL 33135, USA',
@@ -30,7 +30,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
     yearBuilt:'2016',
    },
    {id:3,
-    image: 'https://picsum.photos/200/300/?blur',
+    image: 'https://picsum.photos/id/1062/200/300',
    title:'Cozy Apartment',
    price: '4500',
    address:'2436 SW 8th St, Miami, FL 33135, USA',
@@ -44,7 +44,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
    yearBuilt:'2016',
   },
   {id:4,
-    image: 'https://picsum.photos/200/300/?blur',
+    image: 'https://picsum.photos/id/238/200/300',
   title:'Newly Built Apartment',
   price: '4500',
   address:'2436 SW 8th St, Chicago, FL 33135, USA',
@@ -58,7 +58,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
   yearBuilt:'2016',
  },
  {id:5,
-    image: 'https://picsum.photos/200/300/?blur',
+    image: 'https://picsum.photos/id/221/200/300',
  title:'Fully Furnished Apartment',
  price: '6000',
  address:'2436 SW 8th St, Los Angeles, FL 33135, USA',
@@ -72,7 +72,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
  yearBuilt:'2016',
 },
 {id:6,
-    image: 'https://picsum.photos/200/300/?blur',
+    image: 'https://picsum.photos/id/556/200/300',
      title:'North Facing House',
      price: '6000',
      address:'2436 SW 8th St, Miami, FL 33135, USA',
@@ -86,7 +86,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
      yearBuilt:'2016',
     },
     {id:7,
-        image: 'https://picsum.photos/200/300/?blur',
+        image: 'https://picsum.photos/id/594/200/300',
     title:'Newly Built House',
     price: '4500',
     address:'2436 SW 8th St, New York, FL 33135, USA',
@@ -100,7 +100,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
     yearBuilt:'2016',
    },
    {id:8,
-    image: 'https://picsum.photos/200/300/?blur',
+    image: 'https://picsum.photos/id/142/200/300',
    title:'Grand Mansion',
    price: '10000',
    address:'2436 SW 8th St, Miami, FL 33135, USA',
@@ -114,7 +114,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
    yearBuilt:'2016',
   },
   {id:9,
-    image: 'https://picsum.photos/200/300/?blur',
+    image: 'https://picsum.photos/id/604/200/300',
   title:'Bachelor Pad',
   price: '4500',
   address:'2436 SW 8th St, Chicago, FL 33135, USA',
@@ -128,7 +128,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
   yearBuilt:'2016',
  },
  {id:10,
-    image: 'https://picsum.photos/200/300/?blur',
+    image: 'https://picsum.photos/id/1031/200/300',
  title:'Penthouse Open Floor',
  price: '10000',
  address:"'2436 SW 8th St',' New York','FL 33135 USA'",
@@ -140,7 +140,7 @@ let houses = JSON.parse(localStorage.getItem("houses"))
  user:' Samuel Palmer',
  datePosted:'04/04/2020',
  yearBuilt:'2016',
-},]
+},];
 
 localStorage.setItem("houses", JSON.stringify(houses));
 // display local storage    
@@ -154,7 +154,7 @@ function ShowHouseListings (houses) {
       propertiesTable.innerHTML += `
         <tr>
         <td>${house.id}</td>
-          <td><img src=${house.image}</td>
+          <td><img src=${house.image}></td>
           <td>${house.title}</td>
           <td>${house.address}</td>
           <td>${house.type}</td>
